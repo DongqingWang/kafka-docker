@@ -1,0 +1,44 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: kafka-pv-volume-0
+  labels:
+    type: local
+spec:
+  storageClassName: local
+  capacity:
+    storage: 500Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/pv/kafka/kafka-0"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: kafka-pv-volume-1
+  labels:
+    type: local
+spec:
+  storageClassName: local
+  capacity:
+    storage: 500Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/pv/kafka/kafka-1"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: kafka-pv-volume-2
+  labels:
+    type: local
+spec:
+  storageClassName: local
+  capacity:
+    storage: 500Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/pv/kafka/kafka-2"
