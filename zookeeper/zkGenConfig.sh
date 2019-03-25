@@ -2,8 +2,8 @@
 
 ZK_USER=${ZK_USER:-"zookeeper"}
 ZK_LOG_LEVEL=${ZK_LOG_LEVEL:-"INFO"}
-ZK_DATA_DIR=${ZK_DATA_DIR:-"/data"}
-ZK_DATA_LOG_DIR=${ZK_DATA_LOG_DIR:-"/datalog"}
+ZK_DATA_DIR=${ZK_DATA_DIR:-"/var/lib/zookeeper/data"}
+ZK_DATA_LOG_DIR=${ZK_DATA_LOG_DIR:-"/var/lib/zookeeper/data/log"}
 ZK_LOG_DIR=${ZK_LOG_DIR:-"/logs"}
 ZK_CONF_DIR=${ZK_CONF_DIR:-"/conf"}
 ZK_CLIENT_PORT=${ZK_CLIENT_PORT:-2181}
