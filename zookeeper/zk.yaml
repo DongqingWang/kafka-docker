@@ -128,12 +128,16 @@ spec:
         readinessProbe:
           exec:
             command:
+            - bash
+            - -c
             - "zkOk.sh"
           initialDelaySeconds: 10
           timeoutSeconds: 5
         livenessProbe:
           exec:
             command:
+            - bash
+            - -c
             - "zkOk.sh"
           initialDelaySeconds: 10
           timeoutSeconds: 5
@@ -141,8 +145,9 @@ spec:
         - name: datadir
           mountPath: /data
       securityContext:
-        runAsUser: 1000
-        fsGroup: 1000
+        runAsUser: 0
+        runAsNonRoot: false
+        fsGroup: 0
   volumeClaimTemplates:
   - metadata:
       name: datadir
@@ -150,4 +155,5 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 2Gi
+          storage: 500Mi
+      storageClassName: local
